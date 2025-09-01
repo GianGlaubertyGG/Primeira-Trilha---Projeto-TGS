@@ -1,0 +1,113 @@
+{
+  "name": "Course",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Título do curso"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descrição do curso"
+    },
+    "instructor_name": {
+      "type": "string",
+      "description": "Nome do instrutor"
+    },
+    "instructor_email": {
+      "type": "string",
+      "description": "Email do instrutor"
+    },
+    "instructor_image": {
+      "type": "string",
+      "description": "Foto do instrutor"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "technology",
+        "design",
+        "business",
+        "marketing",
+        "communication",
+        "leadership"
+      ],
+      "description": "Categoria do curso"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "description": "Nível do curso"
+    },
+    "duration": {
+      "type": "string",
+      "description": "Duração do curso"
+    },
+    "price": {
+      "type": "number",
+      "description": "Preço do curso"
+    },
+    "cover_image": {
+      "type": "string",
+      "description": "Imagem de capa do curso"
+    },
+    "skills_taught": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Habilidades ensinadas"
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Pré-requisitos"
+    },
+    "certificate": {
+      "type": "boolean",
+      "default": true,
+      "description": "Oferece certificado"
+    },
+    "students_count": {
+      "type": "number",
+      "default": 0
+    },
+    "rating": {
+      "type": "number",
+      "default": 0
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "lessons": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title",
+    "instructor_name",
+    "instructor_email",
+    "category",
+    "price"
+  ]
+}

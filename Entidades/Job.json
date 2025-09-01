@@ -1,0 +1,110 @@
+{
+  "name": "Job",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Título da vaga"
+    },
+    "company": {
+      "type": "string",
+      "description": "Nome da empresa"
+    },
+    "company_logo": {
+      "type": "string",
+      "description": "Logo da empresa"
+    },
+    "location": {
+      "type": "string",
+      "description": "Localização da vaga"
+    },
+    "job_type": {
+      "type": "string",
+      "enum": [
+        "fulltime",
+        "parttime",
+        "internship",
+        "contract",
+        "freelance"
+      ],
+      "description": "Tipo de trabalho"
+    },
+    "experience_level": {
+      "type": "string",
+      "enum": [
+        "entry_level",
+        "student",
+        "no_experience"
+      ],
+      "description": "Nível de experiência exigido"
+    },
+    "work_mode": {
+      "type": "string",
+      "enum": [
+        "remote",
+        "hybrid",
+        "onsite"
+      ],
+      "description": "Modalidade de trabalho"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descrição da vaga"
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Requisitos da vaga"
+    },
+    "benefits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Benefícios oferecidos"
+    },
+    "salary_range": {
+      "type": "string",
+      "description": "Faixa salarial"
+    },
+    "skills_required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Habilidades necessárias"
+    },
+    "application_deadline": {
+      "type": "string",
+      "format": "date",
+      "description": "Data limite para aplicação"
+    },
+    "recruiter_email": {
+      "type": "string",
+      "description": "Email do recrutador responsável"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "paused",
+        "closed"
+      ],
+      "default": "active",
+      "description": "Status da vaga"
+    },
+    "applications_count": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "title",
+    "company",
+    "location",
+    "job_type",
+    "description"
+  ]
+}

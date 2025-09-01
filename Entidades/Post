@@ -1,0 +1,66 @@
+{
+  "name": "Post",
+  "type": "object",
+  "properties": {
+    "author_email": {
+      "type": "string",
+      "description": "Email do autor do post"
+    },
+    "content": {
+      "type": "string",
+      "description": "Conteúdo do post"
+    },
+    "post_type": {
+      "type": "string",
+      "enum": [
+        "text",
+        "image",
+        "video",
+        "article",
+        "achievement"
+      ],
+      "default": "text",
+      "description": "Tipo de post"
+    },
+    "media_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "URLs de mídia anexada"
+    },
+    "likes_count": {
+      "type": "number",
+      "default": 0
+    },
+    "comments_count": {
+      "type": "number",
+      "default": 0
+    },
+    "shares_count": {
+      "type": "number",
+      "default": 0
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags do post"
+    },
+    "visibility": {
+      "type": "string",
+      "enum": [
+        "public",
+        "followers",
+        "private"
+      ],
+      "default": "public",
+      "description": "Visibilidade do post"
+    }
+  },
+  "required": [
+    "author_email",
+    "content"
+  ]
+}

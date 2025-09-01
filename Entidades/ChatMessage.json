@@ -1,0 +1,45 @@
+{
+  "name": "ChatMessage",
+  "type": "object",
+  "properties": {
+    "sender_email": {
+      "type": "string",
+      "description": "Email do remetente"
+    },
+    "receiver_email": {
+      "type": "string",
+      "description": "Email do destinatário"
+    },
+    "course_id": {
+      "type": "string",
+      "description": "ID do curso (para chats de curso)"
+    },
+    "message": {
+      "type": "string",
+      "description": "Conteúdo da mensagem"
+    },
+    "message_type": {
+      "type": "string",
+      "enum": [
+        "text",
+        "image",
+        "file"
+      ],
+      "default": "text",
+      "description": "Tipo de mensagem"
+    },
+    "media_url": {
+      "type": "string",
+      "description": "URL de mídia anexada"
+    },
+    "read": {
+      "type": "boolean",
+      "default": false,
+      "description": "Mensagem foi lida"
+    }
+  },
+  "required": [
+    "sender_email",
+    "message"
+  ]
+}
